@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0d1117;
+  color: #edebe3;
+  font-feature-settings: "ss01";
+}
+
+::selection {
+  background-color: #f2a33d;
+  color: #0d1117;
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(to right, rgba(35, 40, 56, 0.55) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 40, 56, 0.55) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 45%, transparent 100%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.node-dot {
+  box-shadow: 0 0 0 3px rgba(242, 163, 61, 0.15);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #f2a33d;
+  outline-offset: 3px;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
